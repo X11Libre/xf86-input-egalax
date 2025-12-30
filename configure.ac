@@ -8,7 +8,6 @@ AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR(.)
 AM_INIT_AUTOMAKE([dist-bzip2])
 
-AM_MAINTAINER_MODE
 m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or late
 r before running autoconf/autogen])])
 XORG_MACROS_VERSION(1.2)
