@@ -34,12 +34,6 @@ AC_SUBST(inputdir)
 # to satisfy silly distcheck requirements.
 PKG_CHECK_MODULES(XORG, xorg-server xproto $REQUIRED_MODULES)
 XORG_CFLAGS="$CWARNFLAGS $XORG_CFLAGS"
-AC_ARG_WITH([sdkdir], [],
-    [sdkdir="$withval"],
-    [sdkdir=`$PKG_CONFIG --variable=sdkdir xorg-server`])
-AC_SUBST([sdkdir])
-
-# Checks for libraries.
 
 # Checks for header files.
 AC_HEADER_STDC
