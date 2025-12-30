@@ -1,6 +1,6 @@
 AC_PREREQ(2.57)
 AC_INIT([xlibre-xf86-input-egalax],
-        0.1,
+        25.0.0,
         [https://github.com/X11Libre/xf86-input-egalax/issues]
         xlibre-xf86-input-egalax)
 
