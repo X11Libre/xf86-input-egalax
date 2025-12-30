@@ -231,7 +231,7 @@ eGalaxReadInput(InputInfoPtr pInfo)
 {
 	eGalaxDevicePtr sc = pInfo->private;
 	char buf[5];
-	int x, y, nread, reinit;
+	int x, y, nread;
 
 	while(xf86WaitForInput(pInfo->fd, 0) > 0) {
 		nread = read(pInfo->fd, &buf, 5);
@@ -292,8 +292,6 @@ eGalaxReadInput(InputInfoPtr pInfo)
 
 		/* Touchpad is pressed. */
 		if ((buf[0] & 0x01) == 0x01 && sc->button == 0) {
-			struct timeval tv;
-
 			xf86PostButtonEvent(pInfo->dev, TRUE, 1, 1, 0, 2, x, y);
 			sc->button = 1;
 
@@ -302,7 +300,6 @@ eGalaxReadInput(InputInfoPtr pInfo)
 			sc->oy = y;
 			continue;
 		}
-		
 
 		if ((buf[0] & 0x01) == 0x01 && sc->button == 1 &&
 		    (abs(x - sc->ox) < sc->area ) &&
@@ -331,8 +328,6 @@ eGalaxCtrl(DeviceIntPtr device, PtrCtrl *ctrl)
 static void
 eGalaxInitAxes(DeviceIntPtr device)
 {
-	InputInfoPtr pInfo = device->public.devicePrivate;
-	eGalaxDevicePtr sc = pInfo->private;
 	unsigned char map[] = {0, 1, 2, 3};
 	Atom btn_label;
 	Atom axis_labels[2] = { 0, 0 };
