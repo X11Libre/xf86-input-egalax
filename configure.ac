@@ -22,17 +22,10 @@ AC_PROG_CC
 AH_TOP([#include "xorg-server.h"])
 
 PKG_PROG_PKG_CONFIG([0.25])
-AC_ARG_WITH(xorg-module-dir,
-            AS_HELP_STRING([--with-xorg-module-dir=DIR],
-                           [Default xorg module directory]),
-            [moduledir="$withval"],
-            [moduledir=`$PKG_CONFIG --variable=moduledir xorg-server`])
+PKG_CHECK_MODULES(XORG, xorg-server xproto)
+moduledir=`$PKG_CONFIG --variable=moduledir xorg-server`
 inputdir=${moduledir}/input
 AC_SUBST(inputdir)
-
-# Checks for pkg-config packages. We need to be able to override sdkdir
-# to satisfy silly distcheck requirements.
-PKG_CHECK_MODULES(XORG, xorg-server xproto $REQUIRED_MODULES)
 
 # Checks for header files.
 AC_HEADER_STDC
