@@ -12,8 +12,8 @@ egalax \- eGalax touch screen input driver
 .br
 .B EndSection
 .SH DESCRIPTION
-.B egalax 
-is an __xservername__ input driver for eGalax touchscreen devices...
+.B egalax
+is an XLibre input driver for eGalax touchscreen devices...
 .PP
 The
 .B egalax
