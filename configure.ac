@@ -33,7 +33,6 @@ AC_SUBST(inputdir)
 # Checks for pkg-config packages. We need to be able to override sdkdir
 # to satisfy silly distcheck requirements.
 PKG_CHECK_MODULES(XORG, xorg-server xproto $REQUIRED_MODULES)
-XORG_CFLAGS="$CWARNFLAGS $XORG_CFLAGS"
 
 # Checks for header files.
 AC_HEADER_STDC
