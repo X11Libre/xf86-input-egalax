@@ -58,8 +58,8 @@ static XF86ModuleVersionInfo eGalaxVersionRec =
     {0, 0, 0, 0}
 };
 
-static void eGalaxUnplug(pointer p);
-static pointer eGalaxPlug(pointer, pointer, int *, int *);
+static void eGalaxUnplug(void *p);
+static void *eGalaxPlug(void*, void*, int *, int *);
 static int eGalaxPreInit(InputDriverPtr, InputInfoPtr, int);
 static void eGalaxUnInit(InputDriverPtr, InputInfoPtr, int);
 static void eGalaxReadInput(InputInfoPtr);
@@ -100,13 +100,10 @@ struct eGalaxDeviceRec {
 
 typedef struct eGalaxDeviceRec * eGalaxDevicePtr;
 
-static void
-eGalaxUnplug(pointer p)
-{
-}
+static void eGalaxUnplug(void *p) { }
 
-static pointer
-eGalaxPlug(pointer module, pointer options, int *errmaj, int *errmin)
+static void*
+eGalaxPlug(void *module, void *options, int *errmaj, int *errmin)
 {
 	xf86AddInputDriver(&EGALAX, module, 0);
 	return (module);
