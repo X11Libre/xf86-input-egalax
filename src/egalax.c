@@ -43,21 +43,6 @@
 #include <xorgVersion.h>
 #include <xkbsrv.h>
 
-static XF86ModuleVersionInfo eGalaxVersionRec =
-{
-    "egalax",
-    MODULEVENDORSTRING,
-    MODINFOSTRING1,
-    MODINFOSTRING2,
-    XORG_VERSION_CURRENT,
-    PACKAGE_VERSION_MAJOR, PACKAGE_VERSION_MINOR,
-    PACKAGE_VERSION_PATCHLEVEL,
-    ABI_CLASS_XINPUT,
-    ABI_XINPUT_VERSION,
-    MOD_CLASS_XINPUT,
-    {0, 0, 0, 0}
-};
-
 static void eGalaxUnplug(void *p);
 static void *eGalaxPlug(void*, void*, int *, int *);
 static int eGalaxPreInit(InputDriverPtr, InputInfoPtr, int);
@@ -77,6 +62,21 @@ _X_EXPORT InputDriverRec EGALAX = {
 	eGalaxUnInit,		/* un-init */
 	NULL,			/* module */
 	0			/* ref count */
+};
+
+static XF86ModuleVersionInfo eGalaxVersionRec =
+{
+    .modname      = "egalax",
+    .vendor       = MODULEVENDORSTRING,
+    ._modinfo1_   = MODINFOSTRING1,
+    ._modinfo2_   = MODINFOSTRING2,
+    .xf86version  = XORG_VERSION_CURRENT,
+    .majorversion = PACKAGE_VERSION_MAJOR,
+    .minorversion = PACKAGE_VERSION_MINOR,
+    .patchlevel   = PACKAGE_VERSION_PATCHLEVEL,
+    .abiclass     = ABI_CLASS_XINPUT,
+    .abiversion   = ABI_XINPUT_VERSION,
+    .moduleclass  = MOD_CLASS_XINPUT
 };
 
 _X_EXPORT XF86ModuleData egalaxModuleData =
