@@ -64,27 +64,14 @@ _X_EXPORT InputDriverRec EGALAX = {
 	0			/* ref count */
 };
 
-static XF86ModuleVersionInfo eGalaxVersionRec =
-{
-    .modname      = "egalax",
-    .vendor       = MODULEVENDORSTRING,
-    ._modinfo1_   = MODINFOSTRING1,
-    ._modinfo2_   = MODINFOSTRING2,
-    .xf86version  = XORG_VERSION_CURRENT,
-    .majorversion = XLIBRE_MODULE_VERSION_MAJOR,
-    .minorversion = XLIBRE_MODULE_VERSION_MINOR,
-    .patchlevel   = XLIBRE_MODULE_VERSION_PATCH,
-    .abiclass     = ABI_CLASS_XINPUT,
-    .abiversion   = ABI_XINPUT_VERSION,
-    .moduleclass  = MOD_CLASS_XINPUT
-};
-
-_X_EXPORT XF86ModuleData egalaxModuleData =
-{
-	&eGalaxVersionRec,
-	eGalaxPlug,
-	eGalaxUnplug
-};
+XF86_MODULE_DATA_INPUT(
+    egalax,
+    eGalaxPlug,
+    eGalaxUnplug,
+    "egalax",
+    XLIBRE_MODULE_VERSION_MAJOR,
+    XLIBRE_MODULE_VERSION_MINOR,
+    XLIBRE_MODULE_VERSION_PATCH);
 
 struct eGalaxDeviceRec {
 	char		*device;
