@@ -24,9 +24,6 @@ PKG_CHECK_MODULES(XORG, xorg-server xproto)
 xlibre_input_drivers_dir=`$PKG_CONFIG --variable=input_drivers_dir xorg-server`
 AC_SUBST(xlibre_input_drivers_dir)
 
-# Checks for header files.
-AC_HEADER_STDC
-
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
