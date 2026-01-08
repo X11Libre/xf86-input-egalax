@@ -1,5 +1,5 @@
 .ds q \N'34'
-.TH EGALAX __drivermansuffix__ __vendorversion__
+.TH EGALAX @xlibre_driver_man_section@ @PACKAGE_VERSION@ "X Version 11"
 .SH NAME
 egalax \- eGalax touch screen input driver
 .SH SYNOPSIS
@@ -87,6 +87,6 @@ Time the driver waits befor emulating right button pressure.
 The default is 1 second.
 .PP
 .SH "SEE ALSO"
-__xservername__(__appmansuffix__), __xconfigfile__(__filemansuffix__), xorgconfig(__appmansuffix__), Xserver(__appmansuffix__), X(__miscmansuffix__).
+@xlibre_server_name@(@xlibre_app_man_section@), @xlibre_server_config@(@xlibre_file_man_section@), Xserver(@xlibre_app_man_section@), X(@xlibre_misc_man_section@).
 .SH AUTHORS
 The driver has been written by Gleb Smirnoff
