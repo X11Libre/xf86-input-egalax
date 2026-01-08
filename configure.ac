@@ -22,8 +22,7 @@ AH_TOP([#include "xorg-server.h"])
 
 PKG_PROG_PKG_CONFIG([0.25])
 PKG_CHECK_MODULES(XORG, xorg-server xproto)
-moduledir=`$PKG_CONFIG --variable=moduledir xorg-server`
-inputdir=${moduledir}/input
+inputdir=`$PKG_CONFIG --variable=input_drivers_dir xorg-server`
 AC_SUBST(inputdir)
 
 # Checks for header files.
