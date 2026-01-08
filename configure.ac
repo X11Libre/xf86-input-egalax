@@ -1,8 +1,7 @@
 AC_PREREQ(2.57)
 AC_INIT([xlibre-xf86-input-egalax],
         25.0.0,
-        [https://github.com/X11Libre/xf86-input-egalax/issues]
-        xlibre-xf86-input-egalax)
+        [https://github.com/X11Libre/xf86-input-egalax/issues])
 
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR(.)
