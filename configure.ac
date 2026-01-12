@@ -8,4 +8,5 @@ AC_INIT([xlibre-xf86-input-egalax],
 
 XLIBRE_INIT_MODULE_AM(egalax)
 
-AC_OUTPUT([Makefile src/Makefile man/Makefile man/egalax.man])
+AC_CONFIG_FILES([Makefile src/Makefile man/Makefile man/egalax.man])
+AC_OUTPUT
